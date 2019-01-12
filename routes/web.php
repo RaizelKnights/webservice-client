@@ -16,4 +16,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/data', function () {
+    $json = @file_get_contents('http://localhost/webservice-tugas/public/api/buku', true);
+
+    $data = json_decode($json);
+
+    return view('data', compact('data'));
+});
+
 // Route::get('/login')
