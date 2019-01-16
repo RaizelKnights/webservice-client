@@ -43,15 +43,27 @@ Route::get('/user', function (Request $request) {
 
     return json_decode((string) $response->getBody(), true);
 });
-Route::get('/buku', function () {
-    $client = new Client([
-            'headers' => [
-                'content-type' => 'application/json',
-                'Accept' => 'application/json',
-            ],
-            ]);
+// Route::get('/buku', function () {
+//     $client = new Client([
+//             'headers' => [
+//                 'content-type' => 'application/json',
+//                 'Accept' => 'application/json',
+//             ],
+//             ]);
 
-    $response = $client->request('GET', 'http://localhost/webservice-tugas/public/api/buku');
+//     $response = $client->request('GET', 'http://localhost/webservice-tugas/public/api/buku');
 
-    return $response->getBody()->getContents();
-})->name('api.buku');
+//     return $response->getBody()->getContents();
+// })->name('api.buku');
+
+// Route::get('/rian', function () {
+//     $client = new Client([
+//     'headers' => [
+//         'Content-Type' => 'application/json',
+//     ],
+//     ]);
+
+//     $response = $client->request('GET', 'http://192.168.100.10/public_html/api/users');
+
+//     return $response->getBody()->getContents();
+// });

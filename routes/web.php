@@ -16,12 +16,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/data', function () {
-    $json = @file_get_contents('http://localhost/webservice-tugas/public/api/buku', true);
+// Route::get('/data', function () {
+//     $json = @file_get_contents('http://localhost/webservice-tugas/public/api/buku', true);
 
-    $data = json_decode($json);
+//     $data = json_decode($json);
+//     $title = 'Data Buku';
 
-    return view('data', compact('data'));
-});
+//     return view('databuku', compact('data', 'title'));
+// })->name('data.buku');
+
+Route::resource('buku', 'BukuController');
 
 // Route::get('/login')
